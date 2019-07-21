@@ -1,0 +1,1 @@
+# azure-storage-static-site

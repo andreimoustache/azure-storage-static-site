@@ -10,10 +10,8 @@ variables:
 steps:
 - task: AzureFileCopy@3
   inputs:
-    ConnectedServiceNameSelector: 'ConnectedServiceNameARM'
-    SourcePath: '$(Build.SourcesDirectory)'
+    SourcePath: '.'
+    azureSubscription: 'Pay-As-You-Go (455c1742-6ea0-4579-b84a-0d9bc1de2139)'
     Destination: 'AzureBlob'
-    ConnectedServiceNameARM: '$(Subscription)'
-    AzureSubscription: '$(Subscription)'
-    Storage: $(StorageName)
+    storage: 'dn1simplesitestorage'
     ContainerName: '$web'

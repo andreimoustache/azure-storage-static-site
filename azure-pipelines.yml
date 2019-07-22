@@ -13,7 +13,7 @@ steps:
     ConnectedServiceNameSelector: 'ConnectedServiceNameARM'
     SourcePath: '$(Build.SourcesDirectory)'
     Destination: 'AzureBlob'
-    ConnectedServiceNameARM: '$(Subscription)'
-    AzureSubscription: '$(Subscription)'
+    ConnectedServiceNameARM: '$(ConnectedServiceName)'
+    AzureSubscription: '$(ConnectedServiceName)'
     Storage: $(StorageName)
     ContainerName: '$web'

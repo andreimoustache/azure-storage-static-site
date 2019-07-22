@@ -11,7 +11,8 @@ steps:
 - task: AzureFileCopy@3
   inputs:
     SourcePath: '$(Build.SourcesDirectory)'
-    AzureSubscription: $(Subscription)
     Destination: 'AzureBlob'
+    ConnectedServiceNameARM: '$(Subscription)'
+    AzureSubscription: '$(Subscription)'
     Storage: $(StorageName)
     ContainerName: '$web'

@@ -8,12 +8,11 @@ variables:
 - group: 'AzureConnections'
 
 steps:
-- task: AzureFileCopy@3
+- task: AzureFileCopy@2
+  displayName: 'AzureBlob File Copy'
   inputs:
-    ConnectedServiceNameSelector: 'ConnectedServiceNameARM'
-    SourcePath: '$(Build.SourcesDirectory)'
-    Destination: 'AzureBlob'
-    ConnectedServiceNameARM: '$(ConnectedServiceName)'
-    AzureSubscription: '$(ConnectedServiceName)'
-    Storage: $(StorageName)
+    SourcePath: '$(System.DefaultWorkingDirectory)'
+    azureSubscription: '$(Subscription)'
+    Destination: AzureBlob
+    storage: $(StorageName)
     ContainerName: '$web'

@@ -10,6 +10,7 @@ variables:
 steps:
 - task: AzureFileCopy@3
   inputs:
+    sourcePath: '$(Build.SourcesDirectory)'
     azureSubscription: $(Subscription)
     destination: 'AzureBlob'
     storage: $(StorageName)

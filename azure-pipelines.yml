@@ -10,6 +10,7 @@ variables:
 steps:
 - task: AzureFileCopy@3
   inputs:
+    ConnectedServiceNameSelector: 'ConnectedServiceNameARM'
     SourcePath: '$(Build.SourcesDirectory)'
     Destination: 'AzureBlob'
     ConnectedServiceNameARM: '$(Subscription)'
